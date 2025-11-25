@@ -10,7 +10,9 @@
   </head>
   <body>
     <div id="app">
-      <div class="navbar"></div>
+      <div class="navbar">
+        <div class="cart">Cart({{ cart }})</div>
+      </div>
 
       <div class="product-display">
         <div class="product-container">
@@ -27,9 +29,13 @@
             <ul>
               <li v-for="detail in details">{{ detail }}</li>
             </ul>
-            <div v-for="variant in variants" :key="variant.id">{{ variant.color }}</div>
+            <div v-for="variant in variants" :key="variant.id" @mouseover="updateImage(variant.image)">{{ variant.color }}</div>
 
             <div v-for="(size, index) in sizes" :key="index">{{ size }}</div>
+            <button class="button" v-on:click="addToCart">Add to Cart</button>
+
+            <button class="button" v-on:click="removeFromCart">Remove Item</button>
+
             <p>{{ description }}</p>
             <a :href="url">Made by Vue Mastery</a>
           </div>
