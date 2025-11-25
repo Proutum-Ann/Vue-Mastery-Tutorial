@@ -2,7 +2,9 @@ const app = Vue.createApp({
     data: function(){
         return {
             product: 'Socks',
-            description: 'Warm, fuzzy socks for you and your feet.'
+            image: 'assets/images/socks_green.jpg',
+            description: 'Warm, soft socks for you and your feet.',
+            url: 'https://www.vuemastery.com/'
         }
     }
 })
